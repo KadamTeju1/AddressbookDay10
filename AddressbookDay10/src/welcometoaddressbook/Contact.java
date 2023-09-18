@@ -1,5 +1,4 @@
 package welcometoaddressbook;
-
 import java.util.Hashtable;
 import java.util.Map;
 
@@ -23,5 +22,4 @@ public class Contact {
         System.out.println();
 
     }
-
 }
