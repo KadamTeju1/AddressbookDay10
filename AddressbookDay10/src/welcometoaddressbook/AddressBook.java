@@ -48,6 +48,32 @@ class Contact{
     public String getEmail() {
         return email;
     }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setZipNo(int zipNo) {
+        this.zipNo = zipNo;
+    }
+
+    public void setPhoneNumber(int phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
     public static void addContact(Contact add){
         list.add(add);
     }
@@ -70,20 +96,24 @@ class Contact{
 }
 public class AddressBook {
     public static void main(String[] args) {
-        Contact c=new Contact("Tejshree","Bhonde","Yavatmal",400028,12345,"shilpa@gmail.com");
-        Contact c1=new Contact("Pooja","Wnnare","Umerkhed",400016,3546,"kunal@gmail.com");
-        Contact c2=new Contact("Girija","Shende","Darwha",400034,18,"avinash@gmail.com");
-        Contact c3=new Contact("shaam","Khadse","Amravati",400045,45,"kunal@gmail.com");
+        Contact c=new Contact("Shilpa","Bhonde","Yavatmal",400028,12345,"shilpa@gmail.com");
+        Contact c1=new Contact("Kunal","Wnnare","Umerkhed",400016,3546,"kunal@gmail.com");
+        Contact c2=new Contact("Avinash","Shende","Darwha",400034,18,"avinash@gmail.com");
+        Contact c3=new Contact("Chotey","Khadse","Amravati",400045,45,"kunal@gmail.com");
 
         Contact.addContact(c);
         Contact.addContact(c1);
         Contact.addContact(c2);
         Contact.addContact(c3);
+        c.setFirstName("Shilpa");
+        System.out.println(c.getFirstName());
 
         ArrayList<Contact> list=Contact.getContact();
         //System.out.println(Contact.getContact());
         for (int i=0;i<list.size();i++){
             System.out.println(list.get(i));
         }
+
+
     }
 }
