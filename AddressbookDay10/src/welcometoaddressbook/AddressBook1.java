@@ -6,7 +6,7 @@ package com.addressbook;
 
 import java.util.ArrayList;
 
-class Contact{
+class Contact3 {
     private String firstName;
     private String lastName;
     private String address;
@@ -16,7 +16,7 @@ class Contact{
     private static ArrayList<com.addressbook.Contact3> list = new ArrayList<com.addressbook.Contact3>();
 
 
-    public Contact(String firstName, String lastName, String address, int zipNo, int phoneNumber, String email) {
+    public Contact3(String firstName, String lastName, String address, int zipNo, int phoneNumber, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -77,6 +77,9 @@ class Contact{
     public static void addContact(com.addressbook.Contact3 add){
         list.add(add);
     }
+    public static void removeContact(com.addressbook.Contact3 remove, String firstName){
+        list.remove(remove);
+    }
 
     public static  ArrayList<com.addressbook.Contact3> getContact(){
         return list;
@@ -94,7 +97,7 @@ class Contact{
                 '}';
     }
 }
-public class AddressBook {
+public class AddressBook1 {
     public static void main(String[] args) {
         com.addressbook.Contact3 c=new com.addressbook.Contact3("Shilpa","Bhonde","Yavatmal",400028,12345,"shilpa@gmail.com");
         com.addressbook.Contact3 c1=new com.addressbook.Contact3("Kunal","Wnnare","Umerkhed",400016,3546,"kunal@gmail.com");
@@ -114,6 +117,10 @@ public class AddressBook {
             System.out.println(list.get(i));
         }
 
-
+        System.out.println("\n After removing");
+        com.addressbook.Contact3.removeContact(c3,"Shilpa");
+        for (int i=0;i<list.size();i++){
+            System.out.println(list.get(i));
+        }
     }
 }
